@@ -1,0 +1,25 @@
+{
+  "name": "electron",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "electron": "^9.0.2"
+  },
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tushar8133/electron.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tushar8133/electron/issues"
+  },
+  "homepage": "https://github.com/tushar8133/electron#readme"
+}
