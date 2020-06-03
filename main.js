@@ -1,17 +1,25 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, shell } = require('electron');
+const path = require("path");
+const { exec, spawn } = require('child_process');
 
 function createWindow () {
-  // Create the browser window.
   let win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    title: "Loading",
+    show: false,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      devTools: false
     }
   })
 
-  // and load the index.html of the app.
-  win.loadFile('index.html')
+  win.removeMenu();
+  win.maximize();
+  win.loadFile('parent.html');
+  win.show();
 }
 
-app.whenReady().then(createWindow)
+app.whenReady().then(createWindow);
+
+app.on('quit', () => {
+  spawn('cmd', ['kill.bat']);
+});
